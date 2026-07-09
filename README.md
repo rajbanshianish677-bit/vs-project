@@ -2,6 +2,8 @@
 
 A personal portfolio website with a cybersecurity/terminal-inspired aesthetic, built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step — just open it in a browser.
 
+**Live Site:** [anishrajbanshi.com.np](https://anishrajbanshi.com.np)
+
 **Live look:** dark terminal theme, monospace/sans type pairing (JetBrains Mono + Inter), animated typing effect, scroll-triggered skill bars, and a circuit-grid background.
 
 ## Sections
@@ -39,14 +41,16 @@ No external JS libraries or frameworks are used. Fonts are loaded from Google Fo
 - Skill proficiency bars that animate into view on scroll
 - Smooth in-page scrolling via `data-scroll` attributes
 - Contact form with client-side status feedback (not yet wired to a backend/mail service)
+- **SEO & AEO Optimized** — Includes rich structured data (JSON-LD), Open Graph metadata, semantic HTML, and an Answer Engine Optimization (AEO) FAQ section.
+- **AI-Ready** — Provides `llms.txt` and `robots.txt` for well-behaved crawlers and AI bots.
 
 ## Getting Started
 
 This is a static site — no build tools or dependencies required.
 
 ```bash
-git clone https://github.com/rajbanshianish677-bit/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/rajbanshianish677-bit/MY-Portfolio.git
+cd MY-Portfolio
 ```
 
 Then just open `index.html` in your browser, or serve it locally:
@@ -64,13 +68,12 @@ Works out of the box with any static hosting provider, e.g. GitHub Pages, Netlif
 1. Push this repo to GitHub
 2. Go to **Settings → Pages**
 3. Set the source branch to `main` (root)
-4. Your site will be live at `https://rajbanshianish677-bit.github.io/<repo-name>/`
+4. Your site will be live at `https://rajbanshianish677-bit.github.io/MY-Portfolio/`
 
 ## To-Do / Future Improvements
 
 - Connect the contact form to a real backend or email service (e.g. Formspree, EmailJS)
 - Add project links/repos to each case file card
-- Possibly split CSS/JS into separate files for maintainability
 
 ## Contact
 
