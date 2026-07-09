@@ -57,17 +57,20 @@ if (bars.length) {
 // Mobile navigation state lives in CSS; JS only toggles state and ARIA.
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('primaryNav');
+const navIcon = document.getElementById('navIcon');
 
 function closeNav() {
   if (!navLinks || !navToggle) return;
   navLinks.classList.remove('is-open');
   navToggle.setAttribute('aria-expanded', 'false');
+  if (navIcon) navIcon.textContent = '☰';
 }
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    if (navIcon) navIcon.textContent = isOpen ? '✕' : '☰';
   });
 
   document.addEventListener('keydown', (event) => {
@@ -85,6 +88,21 @@ const status = document.getElementById('formStatus');
 if (form && status) {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    status.textContent = '> message queued - connect a backend or mail service to deliver it.';
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+    status.textContent = '> initializing connection...';
+    
+    // Simulate network delay for UX
+    setTimeout(() => {
+      status.textContent = '> message queued - connect a backend or mail service to deliver it.';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+      form.reset();
+    }, 1200);
   });
 }
