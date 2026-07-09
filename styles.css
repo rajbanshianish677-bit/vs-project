@@ -101,9 +101,9 @@
   .breadcrumb a:hover{color:var(--accent);}
 
   /* ---------- HERO ---------- */
-  .hero{padding:96px 0 80px; position:relative;}
-  .hero-home{border-top:none; padding-top:80px;}
-  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .hero{padding:72px 0 64px; position:relative;}
+  .hero-home{border-top:none; padding-top:64px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;}
   .eyebrow{
     font-family:var(--mono); font-size:12px; color:var(--accent);
     letter-spacing:1.5px; text-transform:uppercase; display:flex; align-items:center; gap:10px; margin-bottom:18px;
@@ -159,8 +159,8 @@
   .term-line{
     color:var(--muted); margin-bottom:8px; white-space:pre-wrap;
     /* Responsive Fix: Prevent long strings from breaking terminal layout on mobile */
-    word-break: break-all;
-    overflow-wrap: anywhere;
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   .term-line .prompt{color:var(--accent);}
   .term-line .k{color:var(--muted-2);}
@@ -172,17 +172,17 @@
   .term-rest.is-visible{opacity:1; transition:opacity .6s ease;}
 
   /* ---------- SECTION SHELL ---------- */
-  section{padding:88px 0; border-top:1px solid var(--border);}
+  section{padding:64px 0; border-top:1px solid var(--border);}
   section[id]{scroll-margin-top:78px;}
   section:not(#home){content-visibility:auto; contain-intrinsic-size:auto 600px;}
-  .sec-head{margin-bottom:44px;}
-  .sec-tag{font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px;}
+  .sec-head{margin-bottom:32px;}
+  .sec-tag{font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;}
   .sec-tag::before{content:"$ "; color:var(--muted-2);}
   h2.sec-title{font-family:var(--mono); font-size:clamp(24px,3.4vw,32px); font-weight:700; letter-spacing:0;}
   .sec-sub{color:var(--muted); font-size:14.5px; margin-top:10px; max-width:600px;}
 
   /* ---------- ABOUT ---------- */
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
   .about-text p{color:var(--muted); font-size:15px; margin-bottom:16px;}
   .about-text strong{color:var(--text);}
   .whoami{
@@ -231,7 +231,7 @@
   }
 
   /* ---------- SKILLS ---------- */
-  .skills-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:22px;}
+  .skills-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;}
   .skill-card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:22px;}
   .skill-card h3{
     font-family:var(--mono); font-size:14px; margin-bottom:16px; color:var(--text); display:flex; align-items:center; gap:8px;
@@ -253,22 +253,21 @@
   .bar-fill{height:100%; background:linear-gradient(90deg, var(--accent-dim), var(--accent)); border-radius:3px; width:0%; transition:width 1.2s ease;}
 
   /* ---------- PROJECTS ---------- */
-  .proj-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;}
+  .proj-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;}
   .proj-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:24px;
-    position:relative; transition:border-color .2s, transform .2s;
+    background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;
+    position:relative; transition:border-color .2s, transform .2s; display:flex; flex-direction:column; align-items:flex-start;
   }
   .proj-card:hover{border-color:var(--border-bright); transform:translateY(-3px);}
-  .proj-id{font-family:var(--mono); font-size:11px; color:var(--muted-2); margin-bottom:10px;}
+  .proj-id{font-family:var(--mono); font-size:11px; color:var(--muted-2); margin-bottom:8px;}
   .proj-card h3{
-    font-size:16.5px; margin-bottom:8px; font-weight:700;
-    /* Responsive Fix: Prevent long project titles from overlapping the status badge or overflowing */
-    word-break: break-word;
-    padding-right: 70px;
+    font-size:16px; margin-bottom:8px; font-weight:700;
+    /* Responsive Fix: Prevent long project titles from overflowing */
+    overflow-wrap: break-word; width:100%;
   }
-  .proj-card p{font-size:13.5px; color:var(--muted); margin-bottom:14px;}
+  .proj-card p{font-size:13.5px; color:var(--muted); margin-bottom:14px; width:100%;}
   .proj-status{
-    position:absolute; top:22px; right:22px; font-family:var(--mono); font-size:10px;
+    font-family:var(--mono); font-size:10px; margin-bottom:10px; display:inline-block;
     padding:3px 9px; border-radius:20px; border:1px solid var(--border-bright); color:var(--muted);
   }
   .proj-status.done{color:var(--accent); border-color:var(--accent-dim);}
@@ -313,7 +312,7 @@
   .beyond-card span{font-size:12px; color:var(--muted); font-family:var(--mono);}
 
   /* ---------- FAQ ---------- */
-  .faq-list{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; align-items:start;}
+  .faq-list{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; align-items:start;}
   .faq-item{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:22px; transition: border-color .2s;}
   .faq-item[open]{border-color:var(--accent-dim);}
   .faq-item summary{cursor:pointer; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; list-style:none;}
@@ -324,10 +323,10 @@
   .faq-item p{font-size:13.5px; color:var(--muted); margin-top:14px;}
 
   /* ---------- CONTACT ---------- */
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
   .contact-list{display:flex; flex-direction:column; gap:14px; font-style:normal;}
   .contact-row{
-    display:flex; align-items:center; gap:14px; padding:16px 18px; background:var(--surface);
+    display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--surface);
     border:1px solid var(--border); border-radius:8px; transition:border-color .2s;
   }
   .contact-row:hover{border-color:var(--accent-dim);}
@@ -402,8 +401,8 @@
     .wrap{padding:0 20px;}
     .nav-inner{padding:14px 20px;}
     nav.links.is-open{right:20px; left:20px;}
-    .hero{padding:68px 0 64px;}
-    section{padding:68px 0;}
-    .term-body{font-size:12px;}
+    .hero{padding:48px 0 40px;}
+    section{padding:48px 0;}
+    .term-body{font-size:12px; padding: 14px;}
     .log-line{flex-direction:column; gap:4px;}
   }
